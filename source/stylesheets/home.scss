@@ -1,0 +1,94 @@
+body {
+  background-color: black;
+  color: white;
+  font-family: "proxima-nova";
+}
+
+.home {
+  .hero {
+    min-height: 300px;
+    background-image: image-url('small-crescent-rotate.jpg');
+    background-color: black;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: 35%;
+    margin-bottom: 4em;
+
+    header {
+      margin: 0 auto;
+      padding: 20px 0;
+    }
+
+    h1 {
+      color: white;
+      text-align: center;
+      text-transform: uppercase;
+      font-family: "futura-pt";
+      font-weight: 300;
+      font-size: 3em;
+      text-indent: 1.5em;
+      letter-spacing: 1.6em;
+    }
+
+  }
+
+  @media(max-width: 500px) {
+    .hero {
+      min-height: 220px;
+
+      h1 {
+        font-size: 2.4em;
+        text-indent: 1.2em;
+        letter-spacing: 1.2em;
+      }
+    }
+  }
+
+  .button {
+    margin: 0 auto;
+    text-align: center;
+
+    a {
+      color: white;
+      text-decoration: none;
+      padding: 0.4em 1.2em;
+      border: 1px solid white;
+      border-radius: 2px;
+      font-family: "futura-pt";
+      text-transform: uppercase;
+      text-indent: 0.4em;
+      letter-spacing: 0.4em;
+      font-size: 0.8em;
+
+      &:hover {
+        background-color: #111;
+      }
+    }
+  }
+
+  article {
+    margin: 3em auto;
+    clear: both;
+    content: " ";
+    display: table;
+    padding: 5%;
+  }
+
+  section {
+    float: left;
+    width: 33%;
+    padding-right: 3%;
+  }
+
+  @media(max-width: 500px) {
+    section {
+      width: 100%;
+      padding-right: 0;
+    }
+  }
+
+  header {
+    text-align: center;
+  }
+}
+
