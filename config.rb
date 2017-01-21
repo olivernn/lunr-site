@@ -1,3 +1,5 @@
+require 'pathname'
+
 ###
 # Page options, layouts, aliases and proxies
 ###
@@ -8,6 +10,13 @@
 page '/*.xml', layout: false
 page '/*.json', layout: false
 page '/*.txt', layout: false
+
+page '/guides/*', layout: 'guides'
+
+set :markdown_engine, :redcarpet
+set :markdown, fenced_code_blocks: true, smartypants: true, autolink: true, with_toc_data: true
+
+activate :syntax
 
 # With alternative layout
 # page "/path/to/file.html", layout: :otherlayout
@@ -27,12 +36,23 @@ end
 # Helpers
 ###
 
-# Methods defined in the helpers block are available in templates
-# helpers do
-#   def some_helper
-#     "Helping"
-#   end
-# end
+helpers do
+  def guides
+    sitemap.resources.select do |resource|
+      Pathname(resource.path).dirname.to_s == "guides"
+    end
+  end
+
+  def table_of_contents(resource)
+    content = File.read(resource.source_file)
+      .gsub(/\A---(.|\n)*?---/, "")
+      .gsub(/^#\s.+$/, "")
+
+    toc_renderer = Redcarpet::Render::HTML_TOC.new(nesting_level: 2)
+    markdown = Redcarpet::Markdown.new(toc_renderer)
+    markdown.render(content)
+  end
+end
 
 # Build-specific configuration
 configure :build do

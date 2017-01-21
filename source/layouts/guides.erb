@@ -17,7 +17,26 @@
   <body class="<%= page_classes %>">
     <div class="container">
       <%= partial 'nav' %>
-      <%= yield %>
+
+      <div class="content">
+        <div class="sidebar">
+          <ul>
+            <% guides.each do |g| %>
+              <li class="<%= "current" if g == current_page %>">
+                  <%= link_to g.data.title, g.url %>
+                  <% if g == current_page %>
+                    <%= table_of_contents(g) %>
+                  <% end %>
+                </li>
+            <% end %>
+          </ul>
+        </div>
+
+
+        <article>
+          <%= yield %>
+        </article>
+      </div>
     </div>
   </body>
 </html>

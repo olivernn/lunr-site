@@ -1,0 +1,57 @@
+pre.highlight {
+  font-size: 0.8em;
+  position: relative;
+  background-color: #eee;
+  border: 1px solid #ddd;
+  padding: 1em;
+  padding-top: 2em;
+  white-space: pre-wrap;
+
+  &:before {
+    top: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    padding: 0.4em;
+    display: block;
+    font-size: 0.6em;
+    background-color: #ddd;
+    color: #999;
+  }
+
+  &.shell {
+    &:before {
+      content: "shell";
+    }
+  }
+
+  &.html {
+    &:before {
+      content: "HTML";
+    }
+
+    .s {
+      color: #777;
+      font-style: italic;
+    }
+
+    .nt {
+      font-weight: bold;
+    }
+  }
+
+  &.javascript {
+    &:before {
+      content: "JavaScript";
+    }
+
+    .s1, .s2 {
+      color: #777;
+      font-style: italic;
+    }
+
+    .kr, .kd, .k {
+      font-weight: bold;
+    }
+  }
+}

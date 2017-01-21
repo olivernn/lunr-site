@@ -3,9 +3,11 @@
 @import "layout";
 @import "home";
 @import "navigation";
+@import "guides";
+@import "syntax";
 
 h1, h2, h3, h4 {
-  font-family: "futura-pt";
+  font-family: "futura-pt", "Futura";
   text-transform: uppercase;
   letter-spacing: 0.4em;
 }
