@@ -12,3 +12,23 @@ h1, h2, h3, h4 {
   letter-spacing: 0.4em;
 }
 
+dl {
+  dt {
+    font-weight: bold;
+    &:after {
+      content: ": "
+    }
+  }
+
+  dd {
+    margin-left: 0;
+  }
+
+  dt, dd {
+    display: inline;
+  }
+
+  div {
+    padding: 0.2em 0;
+  }
+}
