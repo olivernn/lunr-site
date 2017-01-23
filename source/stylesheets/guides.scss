@@ -2,19 +2,31 @@
   background-color: white;
   color: #222;
 
-  article {
-    margin-left: 280px;
+  @media(min-width: 720px) {
+    .sidebar {
+      position: absolute;
+      margin-right: 5%;
+      width: 240px;
+    }
+
+    article {
+      margin-left: 280px;
+      margin-right: 1.4em;
+    }
+  }
+
+  @media(max-width: 720px) {
+    article {
+      margin: auto 1.4em;
+    }
   }
 
   .sidebar {
-    position: absolute;
-    width: 240px;
     font-family: "Futura PT", "Futura";
     text-transform: uppercase;
     font-size: 0.8em;
     letter-spacing: 0.2em;
     padding: 0 1em;
-    margin-right: 5%;
 
     a {
       color: black;
