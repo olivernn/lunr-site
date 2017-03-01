@@ -47,11 +47,16 @@ pre.highlight {
 
     .s1, .s2 {
       color: #777;
-      font-style: italic;
     }
 
     .kr, .kd, .k {
       font-weight: bold;
+    }
+
+    .c1 {
+      color: #777;
+      font-style: italic;
+      font-size: 0.8em;
     }
   }
 }

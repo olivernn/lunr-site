@@ -1,5 +1,6 @@
 ---
 title: Core Concepts
+index: 1
 ---
 
 # Core Concepts

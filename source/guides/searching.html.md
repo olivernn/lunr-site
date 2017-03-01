@@ -1,5 +1,6 @@
 ---
 title: Searching
+index: 2
 ---
 # Searching
 

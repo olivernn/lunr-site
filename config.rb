@@ -38,9 +38,9 @@ end
 
 helpers do
   def guides
-    sitemap.resources.select do |resource|
-      Pathname(resource.path).dirname.to_s == "guides"
-    end
+    sitemap.resources
+      .select { |r| Pathname(r.path).dirname.to_s == "guides" }
+      .sort_by { |r| r.data["index"] || 99 }
   end
 
   def table_of_contents(resource)

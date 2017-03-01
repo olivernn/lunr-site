@@ -1,5 +1,6 @@
 ---
 title: Upgrading
+index: 3
 ---
 # Upgrading
 
