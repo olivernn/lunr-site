@@ -1,5 +1,6 @@
 body {
   font-family: "proxima-nova";
+  background-color: black;
 }
 
 .home {
@@ -85,7 +86,7 @@ body {
     line-height: 1.6em;
   }
 
-  @media(max-width: 500px) {
+  @media(max-width: 720px) {
     section {
       width: 100%;
       padding-right: 0;

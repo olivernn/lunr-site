@@ -16,6 +16,10 @@
   }
 
   @media(max-width: 720px) {
+    .sidebar {
+      margin-top: 1.4em;
+    }
+
     article {
       margin: auto 1.4em;
     }
