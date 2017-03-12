@@ -8,9 +8,10 @@
     <!-- Use title if it's in the page YAML frontmatter -->
     <title><%= current_page.data.title %> : Lunr</title>
 
+    <%= stylesheet_link_tag :site %>
+
     <script src="https://use.typekit.net/lem3gmz.js"></script>
     <script>try{Typekit.load({ async: true });}catch(e){}</script>
-    <%= stylesheet_link_tag :site %>
   </head>
 
   <body class="<%= page_classes %>">
