@@ -12,7 +12,7 @@ The simplest way to get going with searching your index is to pass the text you 
 idx.search('foo')
 ```
 
-The above will return details of all documents that match the term 'foo'. Although it looks just like a string, the `search` method is actually being parsed a search query. This supports special syntax for defining more complex queries.
+The above will return details of all documents that match the term 'foo'. Although it looks just like a string, the `search` method parses the string into a search query. This supports special syntax for defining more complex queries.
 
 Searches for multiple terms are also supported, if a document matches _at least_ one of the search terms, it will show in the results. That is, the search terms are OR'd together.
 
@@ -78,7 +78,7 @@ idx.search('foo^10 bar^5 baz')
 
 ## Fuzzy Matches
 
-Lunr supports fuzzy matching search terms in documents, this can be helpful if the spelling of a term is unclear, or to increase the number of search results that are returned. The amount of fuzzyness to allow when searching can also be controlled. The following search matches all documents that have a word within 1 edit distance of 'foo':
+Lunr supports fuzzy matching search terms in documents, this can be helpful if the spelling of a term is unclear, or to increase the number of search results that are returned. The amount of fuzzyness to allow when searching can also be controlled. Fuzziness is applied by appending a tilde `~` and then a positive integer to a term. The following search matches all documents that have a word within 1 edit distance of 'foo':
 
 ```javascript
 idx.search('foo~1')

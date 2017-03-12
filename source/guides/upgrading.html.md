@@ -4,7 +4,7 @@ index: 3
 ---
 # Upgrading
 
-The 2.x versions of Lunr have a similar interface and therefore upgrading shouldn't require large changes in how searches are performed. There are however differences in how indexes are built and serialised, as well as how the interface required of pipeline functions. This guide will cover the major differences and show how to upgrade.
+The 2.x versions of Lunr have a similar interface to previous versions and therefore upgrading shouldn't require large changes in how searches are performed. There are however differences in how indexes are built and serialised, as well as how the interface required of pipeline functions. This guide will cover the major differences and show how to upgrade.
 
 ## Index Definition
 
@@ -40,7 +40,7 @@ The above specifies the boost when searching by title. This allows more flexibil
 
 ## Index Building
 
-Probably the largest difference between 0.x/1.x and 2.x is that Lunr indexes are now **immutable**, that is, once they have been built, it is _not_ possible to add/update/remove any documents in the index.
+Probably the largest difference between 0.x/1.x and 2.x is that Lunr indexes are now **immutable**, that is, once they have been built, it is _not_ possible to add, update or remove any documents in the index.
 
 As such, all documents must have been added before the definition function exits.
 

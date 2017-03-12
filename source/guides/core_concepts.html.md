@@ -19,7 +19,7 @@ A document contains the text that you want to be able to search. A document is a
 }
 ```
 
-In this document there are two fields that could be searched on `title` and `body` as well as an `id` field that can be used as a reference. Typically fields are strings of text, but they can be anything that responds to `toString`. Array's can also be used, in which case the result of calling `toString` on each element will be available for search, this can be used for things such as tags.
+In this document there are two fields that could be searched on, `title` and `body`, as well as an `id` field that can be used as a reference. Typically, fields are strings of text, but they can be anything that responds to `toString`. Array's can also be used, in which case the result of calling `toString` on each element will be available for search, this can be used for tags for example.
 
 The documents that are passed to Lunr for indexing do not have to be the exact same structure that the data is represented in your application or site, for example to provide a search on email addresses the email addresses could be split, for example:
 
@@ -38,6 +38,14 @@ Before Lunr can start building an index it must first process the text in the do
 Once the text of a field has been split into tokens each token is passed through a text processing pipeline. A pipeline is a combination of one or more pipeline functions that either modify the token, or extract and store some kind of meta-data about the token. The default pipeline in Lunr provides functions for trimming any punctuation, ignoring stop words and reducing a word to its stem.
 
 The pipeline Lunr uses can be modified, either removing, rearranging or adding custom processors to the pipeline. A custom pipeline function can either prevent a token from entering the index (like the stop word filter), or modify a token (as with stemming). A token can also be expanded, which might be useful for adding synonyms to an index. An example pipeline function that splits email addresses into a local and domain part is below:
+
+```javascript
+var emailFilter = function (token) {
+  return token.toString().split("@").map(function (str) {
+    return token.clone().update(function () { return str })
+  })
+}
+```
 
 ### Stemming
 
