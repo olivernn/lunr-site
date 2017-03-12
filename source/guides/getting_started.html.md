@@ -61,6 +61,6 @@ Now that we have our index created, we can try out some searches:
 idx.search("bright")
 ```
 
-TODO: Embed the example with runkit.
+## Conclusion
 
-TODO: Conculusion
+The above example shows how to quickly get full text search with Lunr. From here you can learn more about the [core concepts](/guides/core_concepts.html) involved in a Lunr index, explore the [advanced search capability](/guides/searching.html) provided by Lunr and see [how to customise Lunr](/guides/customising.html) to provide a great search experience.
