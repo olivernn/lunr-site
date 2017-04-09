@@ -5,7 +5,7 @@ index: 5
 
 # Customisation
 
-Lunr ships with sensible defaults that will produce good results for most use cases. Lunr also provides the ability to customise the index to provide extra features, or more control over how documents are indexed and scored.
+Lunr ships with sensible defaults that will produce good results for most use cases. Lunr also provides the ability to customise the index to provide extra features and allow more control over how documents are indexed and scored.
 
 ## Plugins
 
@@ -27,7 +27,7 @@ var idx = lunr(function () {
 })
 ```
 
-Plugin functions have their context set to the index builder, and the builder is also passed as the first argument to the plugin. Additional parameters can also be passed to the plugin when using it in an index. For example, taking the above plugin and passing it fields to add could look like this:
+Plugin functions have their context set to the index builder, and the builder is also passed as the first argument to the plugin. Additional parameters can also be passed to the plugin when using it in an index. For example, taking the above plugin and passing it fields to add to the index could look like this:
 
 ```javascript
 var parameterisedPlugin = function (builder, fields) {
@@ -45,7 +45,7 @@ var idx = lunr(function () {
 
 ## Pipeline Functions
 
-The most common part of Lunr to customise is the text processing pipeline. For example, if you wanted to support searching on either British or American spelling you could add a pipeline function to normalise certain words. Lets say we want to normalise the term "grey" so users can search by either British spelling "grey" or American spelling "gray". To do this we can add a pipeline function to do the normalisation:
+The most commonly customised part of Lunr is the text processing pipeline. For example, if you wanted to support searching on either British or American spelling, you could add a pipeline function to normalise certain words. Let's say we want to normalise the term "grey" so users can search by either British spelling "grey" or American spelling "gray". To do this we can add a pipeline function to do the normalisation:
 
 ```javascript
 var normaliseSpelling = function (builder) {
@@ -79,9 +79,9 @@ var idx = lunr(function () {
 
 ## Token Meta-data
 
-Pipeline functions in Lunr are able to attach meta-data to a token, an example of this is the tokens position data, i.e. where the token is in the document being indexed. By default no meta-data is stored in the index, this is to reduce the size of the index. It is possible to white list certain token meta-data though. White listed meta-data will be returned with search results, it can also be used by other pipeline functions.
+Pipeline functions in Lunr are able to attach metadata to a token. An example of this is the token's position data, i.e. the location of the token in the indexed document. By default, no metadata is stored in the index; this is to reduce the size of the index. It is possible to whitelist certain token metadata. Whitelisted meta-data will be returned with search results and it can also be used by other pipeline functions.
 
-A `lunr.Token` has support for adding meta-data, for example, the following plugin will attach the length of a token as meta-data with key `tokenLength`. For it to be available in search results this meta-data key is also added to the meta-data white list:
+A `lunr.Token` has support for adding meta-data. For example, the following plugin will attach the length of a token as meta-data with key `tokenLength`. For it to be available in search results, this meta-data key is also added to the meta-data whitelist:
 
 ```javascript
 var tokenLengthMetadata = function (builder) {
@@ -102,7 +102,7 @@ var tokenLengthMetadata = function (builder) {
 }
 ```
 
-As with all plugins, using it an index is simple:
+As with all plugins, using it in an index is simple:
 
 ```javascript
 var idx = lunr(function () {
@@ -112,21 +112,21 @@ var idx = lunr(function () {
 
 ## Similarity Tuning
 
-The algorithm used by Lunr to calculate similarity between a query and a document can be tuned using two parameters. Lunr ships with sensible defaults here, but to these can be adjusted to provide the best results for a given collection of documents.
+The algorithm used by Lunr to calculate similarity between a query and a document can be tuned using two parameters. Lunr ships with sensible defaults, and these can be adjusted to provide the best results for a given collection of documents.
 
 
 <dl>
   <div>
     <dt><code>b</code></dt>
     <dd>
-      This parameter controls the importance given to the length of a document and its fields. This value must be between 0 and 1, and by default it has a value of 0.75. Reducing this value reduces the affect that different length documents have on a terms importance to that document.
+      This parameter controls the importance given to the length of a document and its fields. This value must be between 0 and 1, and by default it has a value of 0.75. Reducing this value reduces the effect of different length documents on a term's importance to that document.
     </dd>
   </div>
 
   <div>
     <dt><code>k1</code></dt>
     <dd>
-      This controls how quickly the boost given by a common word reaches saturation. Increasing this will slow down the rate of saturation, lower values result in quicker saturation. The default value is 1.2. If the collection of documents being indexed have some high occurances of words that are not covered by a stop word filter, these words can quickly dominate any similarity calculation. In these cases it can make sense to reduce this value to get more balanced results.
+      This controls how quickly the boost given by a common word reaches saturation. Increasing it will slow down the rate of saturation and lower values result in quicker saturation. The default value is 1.2. If the collection of documents being indexed have high occurrences of words that are not covered by a stop word filter, these words can quickly dominate any similarity calculation. In these cases, this value can be reduced to get more balanced results.
     </dd>
   </div>
 </dl>

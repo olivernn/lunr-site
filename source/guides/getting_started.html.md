@@ -5,7 +5,7 @@ index: 0
 
 # Getting Started
 
-This guide will walk you through setting up your first Lunr index. It assumes you have some familiarity with JavaScript. After finishing this guide you will have a script that will perform a search on some documents.
+This guide will walk you through setting up your first search index with Lunr. It assumes you have some familiarity with JavaScript. After finishing this guide you will have a script that will be able to perform a search on a collection of documents.
 
 ## Installation
 
@@ -15,19 +15,19 @@ Install Lunr with npm:
 $ npm install -g lunr
 ```
 
-Lunr is also available as a single file for use in browsers using script tags, it can be included from the unpkg CDN like this:
+Lunr is also available as a single file for use in browsers using script tags. It can be included from the unpkg CDN like this:
 
 ```html
   <script src="https://unpkg.com/lunr/lunr.min.js"></script>
 ```
 
-The following examples will use node for simplicity, but the same code will work in any JavaScript environment.
+The following examples will use node.js for simplicity; the same code will work in any JavaScript environment.
 
 ## Creating an Index
 
-We will create a simple index of some documents and then perform some searches on those documents.
+We will create a simple index on a collection of documents and then perform searches on those documents.
 
-First, we need some documents. A document is a JavaScript object, it should have an id field that Lunr will use to tell us which documents matched a search, as well as some fields that we want to search on.
+First, we need a collection of documents. A document is a JavaScript object. It should have an identifier field that Lunr will use to tell us which documents in the collection matched a search, as well as any other fields that we want to search on.
 
 ```javascript
 var documents = [{
@@ -42,7 +42,7 @@ var documents = [{
 }]
 ```
 
-We will use the above array of documents to build our index. We want to search the `text` field, and the `name` field will be our id. Lets define our index and add these documents to it.
+We will use the above array of documents to build our index. We want to search the `text` field, and the `name` field will be our identifier. Let's define our index and add these documents to it.
 
 ```javascript
 var idx = lunr(function () {
@@ -55,7 +55,7 @@ var idx = lunr(function () {
 })
 ```
 
-Now that we have our index created, we can try out some searches:
+Now that we have created our index we can try out a search:
 
 ```javascript
 idx.search("bright")
