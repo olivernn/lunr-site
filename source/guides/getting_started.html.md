@@ -18,7 +18,7 @@ $ npm install -g lunr
 Lunr is also available as a single file for use in browsers using script tags. It can be included from the unpkg CDN like this:
 
 ```html
-  <script src="https://unpkg.com/lunr/lunr.min.js"></script>
+  <script src="https://unpkg.com/lunr/lunr.js"></script>
 ```
 
 The following examples will use node.js for simplicity; the same code will work in any JavaScript environment.
