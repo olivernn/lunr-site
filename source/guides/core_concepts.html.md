@@ -85,9 +85,21 @@ The metadata contains a key for each search term found in the document and the f
   "metadata": {
     "test": {
       "body": {
-        "positions": [[0, 4], [24, 4]]
+        "position": [[0, 4], [24, 4]]
       }
     }
   }
 }
+```
+
+Storing metadata about the term and field is opt-in, this is to keep the size of the search index as small as possible. To enable positions of term matches the 'positions' metadata must be white-listed when building the index:
+
+```javascript
+var idx = lunr(function () {
+  this.ref('id')
+  this.field('body')
+  this.metadataWhitelist = ['position']
+
+  documents.forEach(function (doc) { this.add(doc) }, this)
+})
 ```
