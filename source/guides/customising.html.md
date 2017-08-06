@@ -1,6 +1,6 @@
 ---
 title: Customisation
-index: 5
+number: 5
 ---
 
 # Customisation

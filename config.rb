@@ -21,7 +21,7 @@ helpers do
   def guides
     sitemap.resources
       .select { |r| Pathname(r.path).dirname.to_s == "guides" }
-      .sort_by { |r| r.data["index"] || 99 }
+      .sort_by { |r| r.data["number"] || 99 }
   end
 
   def table_of_contents(resource)

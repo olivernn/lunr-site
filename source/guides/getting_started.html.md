@@ -1,6 +1,6 @@
 ---
 title: Getting Started
-index: 0
+number: 0
 ---
 
 # Getting Started

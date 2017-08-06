@@ -1,6 +1,6 @@
 ---
 title: Searching
-index: 2
+number: 2
 ---
 # Searching
 

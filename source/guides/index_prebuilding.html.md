@@ -1,6 +1,6 @@
 ---
 title: Pre-building Indexes
-index: 4
+number: 4
 ---
 
 # Pre-building Indexes

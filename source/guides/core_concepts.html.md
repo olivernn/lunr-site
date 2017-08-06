@@ -1,6 +1,6 @@
 ---
 title: Core Concepts
-index: 1
+number: 1
 ---
 
 # Core Concepts

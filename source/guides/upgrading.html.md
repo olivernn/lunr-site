@@ -1,6 +1,6 @@
 ---
 title: Upgrading
-index: 3
+number: 3
 ---
 # Upgrading
 
