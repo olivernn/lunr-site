@@ -71,4 +71,66 @@
     }
 
   }
+
+  .flag {
+    &:before {
+      padding-right: 0.2em;
+    }
+
+    &.flag-de:before {
+      content: "🇩🇪";
+    }
+
+    &.flag-fr:before {
+      content: "🇫🇷";
+    }
+
+    &.flag-es:before {
+      content: "🇪🇸";
+    }
+
+    &.flag-it:before {
+      content: "🇮🇹";
+    }
+
+    &.flag-jp:before {
+      content: "🇯🇵";
+    }
+
+    &.flag-nl:before {
+      content: "🇳🇱";
+    }
+
+    &.flag-dk:before {
+      content: "🇩🇰";
+    }
+
+    &.flag-pt:before {
+      content: "🇵🇹";
+    }
+
+    &.flag-fi:before {
+      content: "🇫🇮";
+    }
+
+    &.flag-ro:before {
+      content: "🇷🇴";
+    }
+
+    &.flag-hu:before {
+      content: "🇭🇺";
+    }
+
+    &.flag-ru:before {
+      content: "🇷🇺";
+    }
+
+    &.flag-no:before {
+      content: "🇳🇴";
+    }
+
+    &.flag-th:before {
+      content: "🇹🇭";
+    }
+  }
 }
