@@ -39,7 +39,7 @@ require("lunr-languages/lunr.stemmer.support")(lunr)
 require("lunr-languages/lunr.fr")(lunr)
 
 var idx = lunr(function () {
-  this.use(lunr.de)
+  this.use(lunr.fr)
   this.ref('id')
   this.field('text')
 
