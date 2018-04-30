@@ -85,3 +85,21 @@ idx.search('foo~1')
 ```
 
 An edit distance of 1 allows words to match if either adding, removing, changing or transposing a character in the word would lead to a match. For example "boo" requires a single edit (replacing "f" with "b") and would match, but "boot" would not as it also requires an additional "t" at the end.
+
+## Term Presence
+
+By default, Lunr combines multiple terms together in a search with a logical OR. That is, a search for "foo bar" will match documents that contain "foo" or contain "bar" or contain both. This behaviour is controllable at the term level, i.e. the presence of each term in matching documents can be specified. By default each term is optional in a matching document, though a document must have at least one matching term. It is possible to specify that a term must be present in matching documents, or that it must be absent in matching documents.
+
+To indicate that a term must be present in matching documents the term should be prefixed with a plus (`+`) and to indicate that a term must be absent the term should be prefixed with a minus (`-`). Without either prefix the term's presence in matching documents is optional.
+
+The below example searches for documents that must contain "foo", might contain "bar" and must not contain "baz":
+
+```javascript
+idx.search("+foo bar -baz")
+```
+
+To simulate a logical AND search of "foo AND bar" mark both terms as required:
+
+```javascript
+idx.search("+foo +bar")
+```
