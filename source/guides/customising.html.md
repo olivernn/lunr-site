@@ -77,6 +77,24 @@ var idx = lunr(function () {
 })
 ```
 
+A pipeline is run on all fields in a document during indexing. Each token passed to the pipeline functions includes [meta-data](#token-meta-data) that indicates which field the token came from, this can be used to control which fields are processed by a particular pipeline function. The below example will skip [stemming](/guides/core_concepts.html#stemming) on tokens from the "name" field of a document.
+
+```javascript
+// Define a function that will skip a pipeline function for a specified field
+var skipField = function (fieldName, fn) {
+  return function (token, i, tokens) {
+    if (token.metadata["fields"].indexOf(fieldName) >= 0) {
+      return token
+    }
+
+    return fn(token, i, tokens)
+  }
+}
+
+// Create a stemmer that ignores tokens from the field "name"
+var selectiveStemmer = skipField('name', lunr.stemmer)
+```
+
 ## Token Meta-data
 
 Pipeline functions in Lunr are able to attach metadata to a token. An example of this is the token's position data, i.e. the location of the token in the indexed document. By default, no metadata is stored in the index; this is to reduce the size of the index. It is possible to whitelist certain token metadata. Whitelisted meta-data will be returned with search results and it can also be used by other pipeline functions.
