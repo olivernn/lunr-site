@@ -67,7 +67,7 @@ The result of a search contains an array of result objects representing each doc
 
   <div>
     <dt><code>score</code></dt>
-    <dd>a relative measure of how similar this document is to the query. The results are sorted by this property.
+    <dd>a relative measure of how similar this document is to the query. For information on how the score is calculated, see the page on <a href="/guides/searching.html">searching</a>.
   </div>
 
   <div>
