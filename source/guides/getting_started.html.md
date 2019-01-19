@@ -12,7 +12,7 @@ This guide will walk you through setting up your first search index with Lunr. I
 Install Lunr with npm:
 
 ```shell
-$ npm install -g lunr
+$ npm install lunr
 ```
 
 Lunr is also available as a single file for use in browsers using script tags. It can be included from the unpkg CDN like this:
