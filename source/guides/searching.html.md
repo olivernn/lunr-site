@@ -73,7 +73,7 @@ idx.search('title:foo* bar')
 
 ## Boosts
 
-In multi-term searches, a single term may be important than others. For these cases Lunr supports term level boosts. Any document that matches a boosted term will get a higher relevance score, and appear higher up in the results. A boost is applied by appending a caret (`^`) and then a positive integer to a term.
+In multi-term searches, a single term may be more important than others. For these cases Lunr supports term level boosts. Any document that matches a boosted term will get a higher relevance score, and appear higher up in the results. A boost is applied by appending a caret (`^`) and then a positive integer to a term.
 
 ```javascript
 idx.search('foo^10 bar')
