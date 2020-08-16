@@ -13,7 +13,7 @@ This technique is useful with large indexes, or with documents that are largely 
 
 ## Serialization
 
-Lunr indexes support serialisation in JSON. Assuming that the index has already been created, it be serialised using the built-in `JSON` object:
+Lunr indexes support serialisation in JSON. Assuming that the index has already been created, it can be serialised using the built-in `JSON` object:
 
 ```javascript
 var serializedIdx = JSON.stringify(idx)
