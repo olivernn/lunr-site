@@ -19,7 +19,7 @@ A document contains the text that you want to be able to search. A document is a
 }
 ```
 
-In this document there are two fields that could be searched on, `title` and `body`, as well as an `id` field that can be used as an identifier. Typically, fields are strings, or they can be anything that responds to `toString`. Arrays can also be used, in which case the result of calling `toString` on each element will be available for search.
+In this document there are two fields that could be searched on, `title` and `body`, as well as an `id` field that can be used as an identifier. Typically, fields are strings, or they can be anything that responds to `toString`. Arrays can also be used, in which case the result of calling `toString` on each item in the array will be available for search. When a document's field is an array, Lunr assumes that each element of the array is a token, and therefore performs no tokenisation (e.g. splitting on spaces).
 
 The documents that are passed to Lunr for indexing do not have to be in the same structure as the data in your application or site. For example, to provide a search on email addresses the email addresses could be split into domain and local parts:
 
