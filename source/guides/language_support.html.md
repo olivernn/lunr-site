@@ -7,19 +7,28 @@ number: 6
 Lunr has full support for the indexing and searching of documents in English. If your documents are in another language, you need to install the [Lunr Languages](https://github.com/MihaiValentin/lunr-languages) plugin to get the best search results. Currently the following languages are supported:
 
 * <span class="flag flag-de">German</span>
-* <span class="flag flag-dk">Danish</span>
-* <span class="flag flag-es">Spanish</span>
-* <span class="flag flag-fi">Finnish</span>
 * <span class="flag flag-fr">French</span>
-* <span class="flag flag-hu">Hungarian</span>
+* <span class="flag flag-es">Spanish</span>
 * <span class="flag flag-it">Italian</span>
-* <span class="flag flag-jp">Japanese</span>
 * <span class="flag flag-nl">Dutch</span>
-* <span class="flag flag-no">Norwegian</span>
+* <span class="flag flag-dk">Danish</span>
 * <span class="flag flag-pt">Portuguese</span>
+* <span class="flag flag-fi">Finnish</span>
 * <span class="flag flag-ro">Romanian</span>
+* <span class="flag flag-hu">Hungarian</span>
 * <span class="flag flag-ru">Russian</span>
+* <span class="flag flag-no">Norwegian</span>
+* <span class="flag flag-se">Swedish</span>
+* <span class="flag flag-tr">Turkish</span>
+* <span class="flag flag-jp">Japanese</span>
 * <span class="flag flag-th">Thai</span>
+* <span class="flag flag-iq">Arabic</span>
+* <span class="flag flag-cn">Chinese</span>
+* <span class="flag flag-vi">Vietnamese</span>
+* <span class="flag flag-in">Hindi</span>
+* <span class="flag flag-in">Tamil</span>
+* <span class="flag flag-kr">Korean</span>
+* <span class="flag flag-am">Armenian</span>
 
 ## Installing
 

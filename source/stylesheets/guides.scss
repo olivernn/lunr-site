@@ -93,10 +93,6 @@
       content: "🇮🇹";
     }
 
-    &.flag-jp:before {
-      content: "🇯🇵";
-    }
-
     &.flag-nl:before {
       content: "🇳🇱";
     }
@@ -129,8 +125,44 @@
       content: "🇳🇴";
     }
 
+    &.flag-se:before {
+      content: "🇸🇪";
+    }
+
+    &.flag-tr:before {
+      content: "🇹🇷";
+    }
+
+    &.flag-jp:before {
+      content: "🇯🇵";
+    }
+
     &.flag-th:before {
       content: "🇹🇭";
+    }
+
+    &.flag-iq:before {
+      content: "🇮🇶";
+    }
+
+    &.flag-cn:before {
+      content: "🇨🇳";
+    }
+
+    &.flag-vi:before {
+      content: "🇻🇳";
+    }
+
+    &.flag-in:before {
+      content: "🇮🇳";
+    }
+
+    &.flag-kr:before {
+      content: "🇰🇷";
+    }
+
+    &.flag-am:before {
+      content: "🇦🇲";
     }
   }
 }
